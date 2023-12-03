@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
  export const fetchPaginatedUsers =createAsyncThunk("fetchPaginatedUser",async(pageNumber)=>{
     try{
-        const responce= await axios.get(`http://localhost:3000/api/paginatedUsers/${pageNumber}`)
+        const responce= await axios.get(`https://heliver-assignment-backend.onrender.com/api/paginatedUsers/${pageNumber}`)
         return responce.data
 
     }catch(err){
@@ -14,7 +14,7 @@ import { useParams } from "react-router-dom";
 
  export const addUserToTeam=createAsyncThunk("addUsertoTeam",async(data)=>{
 try{
-    const responce = await axios.post(`http://localhost:3000/api/addUserToTeam`,data)
+    const responce = await axios.post(`https://heliver-assignment-backend.onrender.com/api/addUserToTeam`,data)
     return responce
 
 }catch(err){
@@ -25,7 +25,7 @@ try{
 
  export const fetchTeam=createAsyncThunk("fetchTeam",async()=>{
     try{
-        const responce = await axios.get(`http://localhost:3000/api/fetchTeam`)
+        const responce = await axios.get(`https://heliver-assignment-backend.onrender.com/api/fetchTeam`)
         return responce.data
     
     }catch(err){

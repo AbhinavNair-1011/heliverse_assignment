@@ -16,7 +16,7 @@ function App() {
 
     const fetchAllUser = async () => {
       try {
-        const responce = await axios.get("http://localhost:3000/api/allUsers");
+        const responce = await axios.get("https://heliver-assignment-backend.onrender.com/api/allUsers");
 
         dispatch(userAction.allUsers(responce.data))
 
