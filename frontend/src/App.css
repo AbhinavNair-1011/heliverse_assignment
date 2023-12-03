@@ -269,8 +269,8 @@ align-self: center;
      
      }
      #userCard:hover{
-        background-color: black;
-        color:white;
+        background-color: rgb(180, 157, 157);
+        color:rgb(3, 2, 2);
         border:1px solid white;
      }
      #userImage{
@@ -289,13 +289,14 @@ align-self: center;
         
         
      }
+    
      #email{
     }
      .userDetails{
         margin:2px;
     width:100%;
     align-self: center;
-        font-size: 14px;
+        font-size: 11px;
         text-align: center;
      }
      .userDetails_spanTag{
