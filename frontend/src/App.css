@@ -1,0 +1,338 @@
+body{
+    margin:0;
+    padding:0;
+    background-color: rgb(185, 169, 169);
+}
+header{
+    height:100px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+#navTag,header{
+    background-color: black;
+
+
+}
+#headerHeading{
+    text-align: center;
+    letter-spacing: 10px;
+    word-spacing: 3px;
+    color:rgb(255, 28, 28);
+    margin:0;
+    padding:10px;
+   
+}
+.nav_list{
+    color:white;
+    text-decoration:none;
+}
+#navList{
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    font-size: 18px;
+    padding:0;
+    margin:3px;
+    font-style: italic;
+}
+#searchUser_form{
+    height:60px;
+    /* background-color: rgb(16 20 1); */
+    display:flex;
+    align-items:center;
+    justify-content:end;
+    flex-direction:column;
+    
+}
+#searchBar{
+    width:30%;
+    height:27px;
+    text-align: center;
+    font-size: 16px;
+    background-color: black;
+    color:beige;
+    border:1px solid white;
+}
+#searchBarSubmit{
+background-color: black;
+color: white;
+margin:5px;
+}
+#filterDiv{
+    border:1px solid white;
+    margin:5px;
+}
+
+#genderFilter,#domainFilter,#availableFilter{
+    background-color: black;
+    color:white;
+    padding:2px;
+    font-weight: bolder;
+}
+
+main{
+    
+  margin:0
+    
+}
+
+
+#userCard_container{
+
+ margin:0
+ }
+ #userCard{
+     background-color: rgb(243, 238, 238);
+     color:rgb(0, 0, 0);
+     display:flex;
+     flex-direction: row;
+     /* align-items: start; */
+     border-radius:10px;
+     margin:7px;
+     border: 0.5px solid black;
+     height:90px;
+     
+ 
+ }
+ #userCard:hover{
+    background-color: black;
+    color:white;
+    border:1px solid white;
+ }
+ #userImage{
+     width: 55px;
+     height:55px;
+     align-self: center;
+ }
+ #userName{
+    font-size: 20px;
+    width:100%;
+    padding-left:5px;
+   align-self: center;
+   color:rgb(0, 0, 0)
+    
+    
+ }
+ #email{
+    width:2000px !important 
+}
+ .userDetails{
+width:100%;
+align-self: center;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+ .userDetails_spanTag{
+    color:red;
+    padding:5px;
+ }
+ #team-p{
+    font-size: 25px;
+    text-align: center;
+    margin-top:50px;
+ }
+ #addToTeam{
+    font-weight: bold;
+    background-color: black;
+    color:white
+ }
+ #noUsers{
+    text-align: center;
+    margin-top:40px;
+    font-size: 24px;
+ }
+ #buttonDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:20px;
+ }
+ .button{
+    height:20px;
+    width:30px;
+    margin:7px;
+ }
+ #pageNumber{
+    color:black;
+    font-weight:bolder;
+    font-size: 20px;;
+ }
+
+ /*  */
+ @media (max-width:900px){
+    body{
+        margin:0;
+        padding:0;
+        background-color: rgb(185, 169, 169);
+    }
+    header{
+        height:100px;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between
+    }
+    #navTag,header{
+        background-color: black;
+    
+    
+    }
+    #headerHeading{
+        text-align: center;
+        letter-spacing: 2px;
+        word-spacing: 3px;
+        color:rgb(255, 28, 28);
+        margin:0;
+        padding:0px;
+        font-size: 26px;;
+       
+    }
+    .nav_list{
+        color:white;
+        text-decoration:none;
+    }
+    #navList{
+        display: flex;
+        justify-content: space-evenly;
+        list-style-type: none;
+        font-size: 18px;
+        padding:0;
+        margin:3px;
+        font-style: italic;
+    }
+    #searchUser_form{
+        height:0px;
+        /* background-color: rgb(16 20 1); */
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column;
+        margin:60px;
+        
+    }
+    #searchBar{
+        width:50%;
+        height:20px;
+        text-align: center;
+        font-size: 16px;
+        background-color: black;
+        color:beige;
+        border:1px solid white;
+        margin:10px;
+    }
+    /* #searchBarSubmit{
+    background-color: black;
+    color: white;
+    margin:5px;
+    } */
+    #filterDiv{
+        border:1px solid white;
+        margin:5px;
+        display: flex;
+        flex-direction: column;
+        
+
+
+
+    }
+    
+    #genderFilter,#domainFilter,#availableFilter{
+        background-color: black;
+        color:white;
+        padding:0px;
+        font-weight: bolder;
+    }
+    
+    main{
+        
+      margin:15px;
+        
+    }
+    
+    
+    #userCard_container{
+    
+     margin:0
+     }
+     #userCard{
+         background-color: rgb(243, 238, 238);
+         color:rgb(0, 0, 0);
+         display:flex;
+         flex-direction: column;
+         /* align-items: start; */
+         border-radius:10px;
+         margin:10px;
+         border: 0.5px solid black;
+         height:max-content
+         
+     
+     }
+     #userCard:hover{
+        background-color: black;
+        color:white;
+        border:1px solid white;
+     }
+     #userImage{
+         width: 65px;
+         height:65px;
+         align-self: center;
+         
+     }
+     #userName{
+        font-size: 24px;
+        width:100%;
+       color:rgb(0, 0, 0);
+       text-align: center;
+       margin:0px;
+       
+        
+        
+     }
+     #email{
+    }
+     .userDetails{
+        margin:2px;
+    width:100%;
+    align-self: center;
+        font-size: 14px;
+        text-align: center;
+     }
+     .userDetails_spanTag{
+        color:red;
+        /* padding:5px; */
+     }
+     #team-p{
+        font-size: 11px;
+        text-align: center;
+        margin-top:50px;
+     }
+     #addToTeam{
+        font-weight: bold;
+        background-color: black;
+        color:white;
+      font-size: 12px;;
+     }
+     #noUsers{
+        text-align: center;
+        margin-top:40px;
+        font-size: 24px;
+     }
+     #buttonDiv{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height:40px;
+     }
+     .button{
+        height:20px;
+        width:30px;
+        margin:7px;
+     }
+     #pageNumber{
+        color:black;
+        font-weight:bolder;
+        font-size: 20px;;
+     }
+    
+ }
