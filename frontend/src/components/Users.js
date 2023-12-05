@@ -9,17 +9,23 @@ const Users = () => {
 
   const dispatch = useDispatch()
 
-  const pageNumber = useSelector(state => state.user.pageNumber)
-  useEffect(() => {
-    dispatch(fetchPaginatedUsers(pageNumber))
-  }, [pageNumber])
-  const allUser = useSelector((state) => state.user.allUser);
-  const paginatedUser = useSelector(state => state.user.paginatedUser
-  )
+  const genderFilter=useSelector(state=>state.user.genderFilter);
+  const domainFilter=useSelector(state=>state.user.domainFilter);
+  const availableFilter=useSelector(state=>state.user.availableFilter);
 
+  
+  
+  const pageNumber = useSelector(state => state.user.pageNumber)
+
+  useEffect(() => {
+   
+    dispatch(fetchPaginatedUsers({pageNumber,domainFilter,genderFilter,availableFilter}))
+  }, [pageNumber,genderFilter,domainFilter,availableFilter])
+
+  const allUser = useSelector((state) => state.user.allUser);
+  const paginatedUser = useSelector(state => state.user.paginatedUser)
 
   const userSearchInput = useSelector(state => state.user.userInput);
-  const filteredUsers = useSelector(state => state.user.filteredUser);
 
   // const genderFilter=useSelector((state)=>state.user.genderFilter)
 
@@ -28,60 +34,11 @@ const Users = () => {
 
 
   // console.log(userSearchInput)
-  const genderFilter = useSelector(state => state.user.genderFilter)
-  const domainFilter = useSelector((state) => state.user.domainFilter)
-  const availableFilter = useSelector((state) => state.user.availableFilter)
-
-  const filteredUser = allUser.filter((user) => {
-
-
-    if (genderFilter !== 'all' && user.gender.toLowerCase() !== genderFilter.toLowerCase()) {
-      return false;
-    }
-
-    if (domainFilter !== 'all' && user.domain.toLowerCase() !== domainFilter.toLowerCase()) {
-      return false;
-    }
-
-
-    if (availableFilter !== 'all' && user.available.toString() !== availableFilter) {
-      return false;
-    }
-
-    return true;
-  });
-
-  useEffect(() => {
-    const filteredUser = allUser.filter((user) => {
-
-
-      if (genderFilter !== 'all' && user.gender.toLowerCase() !== genderFilter.toLowerCase()) {
-        return false;
-      }
-
-      if (domainFilter !== 'all' && user.domain.toLowerCase() !== domainFilter.toLowerCase()) {
-        return false;
-      }
-
-
-      if (availableFilter !== 'all' && user.available.toString() !== availableFilter) {
-        return false;
-      }
-
-      return true;
-    });
-
-    dispatch(userAction.filteredUser(filteredUser))
+  
 
 
 
-  }, [genderFilter, domainFilter, availableFilter]);
-
-
-
-
-
-  let searchedUser = filteredUser.filter((user) => {
+  let searchedUser = allUser.filter((user) => {
     {
       let username = `${user.first_name} ${user.last_name}`
 

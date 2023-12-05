@@ -2,9 +2,13 @@ import { configureStore, createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
- export const fetchPaginatedUsers =createAsyncThunk("fetchPaginatedUser",async(pageNumber)=>{
+ export const fetchPaginatedUsers =createAsyncThunk("fetchPaginatedUser",async({pageNumber,domainFilter,genderFilter,availableFilter})=>{
     try{
-        const responce= await axios.get(`https://heliver-assignment-backend.onrender.com/api/paginatedUsers/${pageNumber}`)
+        const responce= await axios.get(`https://heliver-assignment-backend.onrender.com/api/paginatedUsers/${pageNumber}`,{
+            params: {
+               genderFilter,domainFilter,availableFilter
+            }
+})
         return responce.data
 
     }catch(err){
@@ -54,6 +58,7 @@ const userslice=createSlice({
     },
     reducers:{
         allUsers:(state,action)=>{
+            state.allUser=[]
             action.payload.forEach((user)=>
             {
                     state.allUser.push(user)
@@ -97,6 +102,7 @@ const userslice=createSlice({
     },
     extraReducers: (builder)=>{
         builder.addCase(fetchPaginatedUsers.fulfilled,(state,action)=>{
+            // console.log(action.payload)
             state.paginatedUser=[]
            action.payload.map(user=>{
                 state.paginatedUser.push(user)

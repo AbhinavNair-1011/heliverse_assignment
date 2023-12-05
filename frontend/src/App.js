@@ -11,13 +11,19 @@ function App() {
 
 
   const dispatch = useDispatch();
+  const genderFilter=useSelector(state=>state.user.genderFilter);
+  const domainFilter=useSelector(state=>state.user.domainFilter);
+  const availableFilter=useSelector(state=>state.user.availableFilter);
 
   useEffect(() => {
 
     const fetchAllUser = async () => {
       try {
-        const responce = await axios.get("https://heliver-assignment-backend.onrender.com/api/allUsers");
-
+        const responce = await axios.get(`https://heliver-assignment-backend.onrender.com/api/allUsers`,{
+          params:{
+          genderFilter,domainFilter,availableFilter
+        }
+       });
         dispatch(userAction.allUsers(responce.data))
 
       } catch (err) {
@@ -28,7 +34,7 @@ function App() {
 
     fetchAllUser()
 
-  }, [])
+  }, [genderFilter,domainFilter,availableFilter])
 
 
 

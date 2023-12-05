@@ -17,7 +17,7 @@ app.use(users)
 app.use(team)
 
 connectToDatabase(()=>{
-    app.listen(3000,()=>{
+    app.listen(3001,()=>{
         console.log("api running on port 3000")
     })
 })

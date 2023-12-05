@@ -23,7 +23,7 @@ const userSchema = mongoose.Schema({
         type: "string"
     },
     available: {
-        type: "string"
+        type: "boolean"
     }
 })
 
